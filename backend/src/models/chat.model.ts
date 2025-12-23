@@ -28,6 +28,9 @@ const chatSchema = new Schema<ChatDocument>(
       type: Boolean,
       default: false,
     },
+    groupName: {
+      type: String,
+    },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
