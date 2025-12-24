@@ -1,23 +1,20 @@
 import { useLocation } from "react-router-dom";
 
 import type { ChatType } from "@/types/chat.type";
-import { useAuth } from "@/hooks/use-auth";
 import { formatChatTime, getOtherUserAndGroup } from "@/lib/helper";
 import { cn } from "@/lib/utils";
 import AvatarWithBadge from "../avatar-with-badge";
 
 interface Props {
   chat: ChatType;
+  currentUserId: string | null;
   onClick?: () => void;
 }
 
-const ChatListItem = ({ chat, onClick }: Props) => {
+const ChatListItem = ({ chat, currentUserId, onClick }: Props) => {
   const { pathname } = useLocation();
 
   const { lastMessage, creatdAt } = chat;
-
-  const { user } = useAuth();
-  const currentUserId = user?._id || null;
 
   const { name, avatar, isOnline, isGroup } = getOtherUserAndGroup(
     chat,
