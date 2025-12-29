@@ -41,7 +41,7 @@ const ChatList = () => {
       <div className="flex flex-col">
         <ChatListHeader onSearch={setSearchQuery} />
         <div className="flex-1 h-[calc(100vh-100px)] overflow-y-auto">
-          <div className="px-20 pb-10 pt-1 space-y-1">
+          <div className="px-2 pb-10 pt-1 space-y-1">
             {isChatsLoading ? (
               <div className="flex items-center justify-center">
                 <Spinner className="w-7 h-7" />
